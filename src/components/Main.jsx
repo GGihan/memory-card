@@ -13,14 +13,36 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
+const isAlreadyPicked = (id, array) => array.includes(id);
+
 export default function Main() {
   const [pokemonData, setPokemonData] = useState([]);
+  const [clickedIds, setClickedIds] = useState([]);
+  const [gameOver, setGameOver] = useState(false);
+
+  const handleCardPick = (id, array) => {
+    if (isAlreadyPicked(id, array)) {
+      setGameOver(true);
+      return true;
+    } else {
+      setClickedIds((prev) => [...prev, id]);
+    }
+  }
+
+  const resetGame = () => {
+    setClickedIds([]);
+    setGameOver(false);
+  }
 
   const handleCardClick = (id) => {
     console.log(id);
+    if (gameOver) return;
+    if (handleCardPick(id, clickedIds)) return;
     const shuffledPokemonData = shuffleArray(pokemonData);
     setPokemonData(shuffledPokemonData);
   };
+
+  console.log(clickedIds);
 
   return (
     <div>
