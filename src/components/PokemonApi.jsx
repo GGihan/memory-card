@@ -28,7 +28,8 @@ export default function PokemonApi({ onDataChange }) {
     };
 
     fetchPokemon();
-  }, [onDataChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return null;
 }

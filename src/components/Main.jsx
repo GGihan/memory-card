@@ -25,7 +25,7 @@ export default function Main() {
 
   const updateHighScore = () => {
     const nextScore = currentScore + 1;
-    setHighScore(prev => (nextScore > prev ? nextScore : prev));
+    setHighScore(nextScore > highScore ? nextScore : highScore);
   }
 
   const resetGame = () => {
@@ -36,6 +36,10 @@ export default function Main() {
   const handleRestartClick = () => {
     resetGame();
     setPokemonData(shuffleArray(pokemonData));
+  }
+
+  const handleDataChange = (data) => {
+    setPokemonData(shuffleArray(data));
   }
 
   const handleCardPick = (id, array) => {
@@ -55,12 +59,12 @@ export default function Main() {
   };
 
   console.log(clickedIds);
-  console.log(currentScore);
-  console.log(highScore);
+  console.log(`current score: ${currentScore}`);
+  console.log(`high score: ${highScore}`);
 
   return (
     <main>
-      <PokemonApi onDataChange={setPokemonData} />
+      <PokemonApi onDataChange={handleDataChange} />
       <h2>Gotta catch them once!</h2>
       <button type="button" className="restart button" onClick={handleRestartClick}>Restart Game</button>
       <PokemonTray pokemonData={pokemonData} onCardClick={handleCardClick}/>
