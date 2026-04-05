@@ -1,4 +1,4 @@
-const TYPE_COLORS = {
+export const TYPE_COLORS = {
   fire: '#F08030',
   water: '#6890F0',
   grass: '#78C850',

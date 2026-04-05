@@ -1,11 +1,13 @@
 main {
-  padding: 16px;
+  /* padding: 16px; */
 }
 
 .game-bar {
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 8px;
+  padding: 16px;
+  background: #a61808;
+  background: linear-gradient(0deg, rgba(166, 24, 8, 1) 0%, rgba(133, 15, 4, 1) 50%, rgba(242, 240, 240, 1) 100%);
 }
 
 .game-bar h2 {
@@ -27,6 +29,21 @@ main {
   width: 120px;
   height: 48px;
   font-size: 1rem;
+  background-color: rgba(166, 24, 8, 1);
+  color: rgba(242, 240, 240, 1);
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: black 2px 2px 5px;
+}
+
+.restart.button:hover {
+  background-color: rgb(190, 24, 8);
+  border: 5px solid black;
+}
+
+.restart.button:active {
+  background-color: rgb(140, 24, 8);
+  transform: translateY(5px);
 }
 
 .game-scores {
@@ -41,6 +58,9 @@ main {
   /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   grid-template-columns: 1fr;
   gap: 1rem;
+  background: #a61808;
+  background: linear-gradient(180deg, rgba(166, 24, 8, 1) 0%, rgba(133, 15, 4, 1) 50%, rgba(242, 240, 240, 1) 100%);
+  padding: 16px;
 }
 
 /* Pokemon Card */
@@ -49,7 +69,8 @@ main {
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
-  background-color: darkslategrey;
+  background-color: rgb(2, 37, 37);
+  color: #e0eff7;
   padding: 8px;
   gap: 8px;
 }

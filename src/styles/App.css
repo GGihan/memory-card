@@ -1,6 +1,6 @@
-header { grid-area: header; background-color: lightcoral;}
-main { grid-area: main; background-color: lightblue;}
-footer { grid-area: footer; background-color: lightgreen;}
+header { grid-area: header; background-color: rgba(242, 240, 240, 1)}
+main { grid-area: main;}
+footer { grid-area: footer; background-color: rgba(242, 240, 240, 1)}
 
 
 .app-container {
