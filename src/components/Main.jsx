@@ -53,10 +53,17 @@ export default function Main() {
   }
 
   const handleCardClick = (id) => {
+    // remove focus when clicked
+    document.activeElement.blur();
     if (gameOver) return;
     if (handleCardPick(id, clickedIds)) return;
     updateHighScore();
     setPokemonData(shuffleArray(pokemonData));
+    // prevent screen from jumping up
+    const scrollPos = window.scrollY;
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollPos);
+    });
   };
 
   const handleCardKeyDown = (id, e) => {
