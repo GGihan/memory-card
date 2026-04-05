@@ -5,6 +5,10 @@ footer {
   gap: 1rem;
 }
 
+footer p {
+  font-size: 1.5rem;
+}
+
 ul {
   display: flex;
   gap: 1rem;

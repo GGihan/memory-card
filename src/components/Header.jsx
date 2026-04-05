@@ -1,4 +1,4 @@
-import logo from "../assets/pokeball.svg";
+import logo from "../assets/images/pokeball.svg";
 import "../styles/Header.css";
 
 export default function Header() {

@@ -1,6 +1,7 @@
 .game-bar {
-  align-items: center;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
   background: #a61808;
   background: linear-gradient(0deg, rgba(166, 24, 8, 1) 0%, rgba(133, 15, 4, 1) 50%, rgba(242, 240, 240, 1) 100%);
@@ -77,6 +78,7 @@
   border-radius: 10px;
   background-color: rgb(2, 37, 37);
   color: #e0eff7;
+  box-shadow: 2px 5px 5px black;
   padding: 8px;
   gap: 8px;
   cursor: pointer;
@@ -87,7 +89,7 @@
 .pokemon-card-container:focus {
   transform: translateY(10px);
   outline: none;
-  box-shadow: 0px 0px 30px black;
+  box-shadow: 0px -10px 40px black;
 }
 
 .pokemon-card-container img {
@@ -107,9 +109,11 @@
   }
 }
 
-@media (min-width: 724px) {
+@media (min-width: 736px) {
   .game-bar {
-    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
   }
 
   .pokemon-card-tray {
