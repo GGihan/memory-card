@@ -1,6 +1,7 @@
-import github from "../assets/github.svg"
-import linkedin from "../assets/linkedin.svg"
-import twitter from "../assets/twitter.svg"
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
+import twitter from "../assets/twitter.svg";
+import "../styles/Footer.css";
 
 export default function Footer() {
 
@@ -15,7 +16,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="GitHub profile (opens in a new tab)"
             >
-              <img src={github} alt="" role="presentation" width={40} />
+              <img src={github} alt="" role="presentation" />
             </a>
           </li>
           <li>
@@ -25,7 +26,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="linkedin homepage (opens in a new tab)"
             >
-              <img src={linkedin} alt="" role="presentation" width={40} />
+              <img src={linkedin} alt="" role="presentation" />
             </a>
           </li>
           <li>
@@ -35,7 +36,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="Twitter homepage (opens in a new tab)"
             >
-              <img src={twitter} alt="" role="presentation" width={40} />
+              <img src={twitter} alt="" role="presentation" />
             </a>
           </li>
         </ul>

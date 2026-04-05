@@ -1,10 +1,11 @@
-import logo from "../assets/pokeball.svg"
+import logo from "../assets/pokeball.svg";
+import "../styles/Header.css";
 
 export default function Header() {
 
   return (
     <header>
-      <img src={logo} alt="Pokeball logo" className="header-logo" width={48}/>
+      <img src={logo} alt="Pokeball logo" className="header-logo" />
       <h1>Pokemon Memory Game</h1>
     </header>
   );

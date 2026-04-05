@@ -1,0 +1,15 @@
+header { grid-area: header; background-color: lightcoral;}
+main { grid-area: main; background-color: lightblue;}
+footer { grid-area: footer; background-color: lightgreen;}
+
+
+.app-container {
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 96px 1fr 52px;
+  min-height: 100vh;
+  background-color: #e7e7e7;
+}

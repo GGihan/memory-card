@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials img {
+  width: 40px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}

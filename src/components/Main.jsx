@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
 import PokemonApi from "./PokemonApi";
 import PokemonTray from "./PokemonTray";
+import "../styles/Main.css";
 
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -67,10 +68,12 @@ export default function Main() {
       <PokemonApi onDataChange={handleDataChange} />
       <div className="game-bar">
         <h2>Gotta catch them once!</h2>
-        <button type="button" className="restart button" onClick={handleRestartClick}>Restart Game</button>
-        <div className="game-scores">
-          <p>Score: {currentScore}</p>
-          <p>Highest Score: {highScore}</p>
+        <div className="game-elements-container">
+          <button type="button" className="restart button" onClick={handleRestartClick}>Restart Game</button>
+          <div className="game-scores">
+            <p>Score: {currentScore}</p>
+            <p>Highest Score: {highScore}</p>
+          </div>
         </div>
       </div>
       <PokemonTray pokemonData={pokemonData} onCardClick={handleCardClick}/>
