@@ -1,7 +1,3 @@
-main {
-  /* padding: 16px; */
-}
-
 .game-bar {
   align-items: center;
   justify-content: space-between;
@@ -50,12 +46,16 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  color: rgba(242, 240, 240, 1);
+}
+
+.game-scores p:nth-child(1) {
+  align-self: flex-start;
 }
 
 /* Pokemon Tray */
 .pokemon-card-tray {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   grid-template-columns: 1fr;
   gap: 1rem;
   background: #a61808;
@@ -68,15 +68,23 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border: 3px solid black;
+  border-radius: 10px;
   background-color: rgb(2, 37, 37);
   color: #e0eff7;
   padding: 8px;
   gap: 8px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.pokemon-card-container:hover {
+  transform: translateY(10px);
 }
 
 .pokemon-card-container img {
   background-color: lightskyblue;
+  border-radius: 5px;
 }
 
 .pokemon-card-container p {

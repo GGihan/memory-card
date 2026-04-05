@@ -59,10 +59,6 @@ export default function Main() {
     setPokemonData(shuffleArray(pokemonData));
   };
 
-  console.log(clickedIds);
-  console.log(`current score: ${currentScore}`);
-  console.log(`high score: ${highScore}`);
-
   return (
     <main>
       <PokemonApi onDataChange={handleDataChange} />
