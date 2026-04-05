@@ -9,6 +9,13 @@ const getPokemonSprite = (pokemon, config) => {
   return pokemon.sprites.other['official-artwork'][spriteType];
 };
 
+const getOptimizedImage = (originalUrl) => {
+  if (!originalUrl) return "";
+  const cleanUrl = originalUrl.replace(/^https?:\/\//, '');
+  
+  return `https://images.weserv.nl/?url=${cleanUrl}&w=800&output=webp&q=80`;
+};
+
 const getPokemonBackgroundColor = (pokemon, config) => {
   const pokemonType = pokemon.types[0].type.name;
   const backgroundColor = config[pokemonType];
@@ -18,6 +25,7 @@ const getPokemonBackgroundColor = (pokemon, config) => {
 export default function PokemonCard({ pokemon, onCardClick, onKeyDown }) {
   const spriteConfig = SPRITE_CONFIG[pokemon.name];
   const spriteUrl = getPokemonSprite(pokemon, spriteConfig);
+  const optimizedSpriteUrl = getOptimizedImage(spriteUrl);
   const typeConfig = TYPE_COLORS;
   const backgroundColor = getPokemonBackgroundColor(pokemon, typeConfig);
   const upperCaseName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
@@ -31,7 +39,7 @@ export default function PokemonCard({ pokemon, onCardClick, onKeyDown }) {
       role="button"
       aria-label={pokemon.name}
     >
-      <img src={spriteUrl} alt={pokemon.name} style={{ backgroundColor }} />
+      <img src={optimizedSpriteUrl} alt={pokemon.name} style={{ backgroundColor }} />
       <p>{upperCaseName}</p>
     </div>
   );
