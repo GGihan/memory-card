@@ -2,4 +2,6 @@
 
 Sources:
 
-Images by https://pokeapi.co/ 
+Images by https://pokeapi.co/
+
+Icons by https://pictogrammers.com

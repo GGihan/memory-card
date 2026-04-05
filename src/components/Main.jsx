@@ -65,8 +65,14 @@ export default function Main() {
   return (
     <main>
       <PokemonApi onDataChange={handleDataChange} />
-      <h2>Gotta catch them once!</h2>
-      <button type="button" className="restart button" onClick={handleRestartClick}>Restart Game</button>
+      <div className="game-bar">
+        <h2>Gotta catch them once!</h2>
+        <button type="button" className="restart button" onClick={handleRestartClick}>Restart Game</button>
+        <div className="game-scores">
+          <p>Score: {currentScore}</p>
+          <p>Highest Score: {highScore}</p>
+        </div>
+      </div>
       <PokemonTray pokemonData={pokemonData} onCardClick={handleCardClick}/>
     </main>
   );
