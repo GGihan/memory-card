@@ -7,6 +7,8 @@ export const TYPE_COLORS = {
   ice: '#98D8D8',
   dragon: '#7038F8',
   dark: '#705848',
+  ghost: '#69356c',
+  fighting: '#a8580e',
   fairy: '#EE99AC',
   normal: '#A8A878'
 };
