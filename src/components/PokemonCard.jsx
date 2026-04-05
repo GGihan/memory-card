@@ -15,7 +15,7 @@ export default function PokemonCard({ pokemon, onCardClick }) {
   
   return (
     <div className="pokemon-card-container" onClick={onCardClick}>
-      <img src={spriteUrl} alt={pokemon.name} style={{ width: 300 }} />
+      <img src={spriteUrl} alt={pokemon.name} />
       <p>{pokemon.name}</p>
     </div>
   );
