@@ -11,5 +11,5 @@ footer { grid-area: footer; background-color: rgba(242, 240, 240, 1)}
     "footer";
   grid-template-rows: 96px 1fr 52px;
   min-height: 100vh;
-  background-color: #e7e7e7;
+  background-color: rgba(242, 240, 240, 1);
 }
