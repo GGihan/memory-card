@@ -59,20 +59,36 @@ export default function Main() {
     setPokemonData(shuffleArray(pokemonData));
   };
 
+  const handleCardKeyDown = (id, e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleCardClick(id);
+    };
+  }
+
   return (
     <main>
       <PokemonApi onDataChange={handleDataChange} />
       <div className="game-bar">
         <h2>Gotta catch them once!</h2>
         <div className="game-elements-container">
-          <button type="button" className="restart button" onClick={handleRestartClick}>Restart Game</button>
+          <button 
+            type="button"
+            className="restart button"
+            onClick={handleRestartClick}>
+            Restart Game
+          </button>
           <div className="game-scores">
             <p>Score: {currentScore}</p>
             <p>Highest Score: {highScore}</p>
           </div>
         </div>
       </div>
-      <PokemonTray pokemonData={pokemonData} onCardClick={handleCardClick}/>
+      <PokemonTray 
+        pokemonData={pokemonData}
+        onCardClick={handleCardClick}
+        onKeyDown={handleCardKeyDown}
+      />
     </main>
   );
 }

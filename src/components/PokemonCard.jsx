@@ -15,7 +15,7 @@ const getPokemonBackgroundColor = (pokemon, config) => {
   return backgroundColor;
 }
 
-export default function PokemonCard({ pokemon, onCardClick }) {
+export default function PokemonCard({ pokemon, onCardClick, onKeyDown }) {
   const spriteConfig = SPRITE_CONFIG[pokemon.name];
   const spriteUrl = getPokemonSprite(pokemon, spriteConfig);
   const typeConfig = TYPE_COLORS;
@@ -23,7 +23,14 @@ export default function PokemonCard({ pokemon, onCardClick }) {
   const upperCaseName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
   
   return (
-    <div className="pokemon-card-container" onClick={onCardClick}>
+    <div
+      className="pokemon-card-container"
+      onClick={onCardClick}
+      onKeyDown={onKeyDown}
+      tabIndex="0"
+      role="button"
+      aria-label={pokemon.name}
+    >
       <img src={spriteUrl} alt={pokemon.name} style={{ backgroundColor }} />
       <p>{upperCaseName}</p>
     </div>
